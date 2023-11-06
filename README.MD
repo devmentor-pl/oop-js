@@ -1,1 +1,1 @@
-# OOP JS
+> https://devmentor.pl/oop

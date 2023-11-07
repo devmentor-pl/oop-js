@@ -1,9 +1,3 @@
-const checker = {
-    color: 'white',
-    player: 'mateusz',
-    moves: [],
-}
-
 const board = [
     ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09'],
     ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19'],
@@ -17,17 +11,22 @@ const board = [
     ['90', '91', '92', '93', '94', '95', '96', '97', '98', '99'],
 ];
 
-board[6][1] = checker; // ten się będzie ruszał
-board[6][7] = checker; // ten zostaje bez zmian
-
-board[5][2] = board[6][1]; // przestawiam na nowe pole
-board[6][1] = '61'; // ustawiam zawartość dla poprzedniego pola
-board[5][2].moves.push('61-52'); // wprowadzam informacje o przesunięciu
-
-console.log(board[6][7]); // wyświetlam informacje o pionku bez zmian
+const checker1 = {
+    color: 'white',
+    player: 'mateusz',
+    moves: [],
+}
 
 
-// board[6][7] = {color: 'white', player: 'mateusz', moves: ['61-52']}
-console.log(board[5][2])
-// console.log(board[6][7] === board[5][2])
-// console.log(board[6][7].moves === board[5][2].moves)
+const checker2 = {
+    color: 'white',
+    player: 'mateusz',
+    moves: [],
+}
+
+
+board[6][1] = checker1;
+board[6][7] = checker2;
+
+console.log(board[6][1] === board[6][7]);
+console.log(board[6][1].moves === board[6][7].moves);

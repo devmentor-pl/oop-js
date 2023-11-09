@@ -1,8 +1,8 @@
 const checker = {
-    get() {
+    get color() {
         return this._color;
     },
-    set(value) {
+    set color(value) {
         const correctColors = ['white', 'black'];
         if (!correctColors.includes(value)) {
             throw new Error('Invalid color');

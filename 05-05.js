@@ -20,3 +20,5 @@ King.prototype.addMove = function (move) {
 
 const checker = new Checher('white', 'Mateusz');
 const king = new King('black', 'Anna');
+
+console.log(checker, king, checker.addMove === king.addMove);

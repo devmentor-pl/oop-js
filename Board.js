@@ -13,14 +13,27 @@ export default function Board() {
     ];
 }
 
+
 Board.prototype.getField = function (coords) {
+    if (!this.isCorrectCoords(coords)) {
+        throw new Error('Incorrect coords!');
+    }
+
     const [rowIndex, colIndex] = coords;
 
     return this.fieldsList[rowIndex][colIndex];
 }
 
 Board.prototype.setField = function (coords, value) {
-    const [rowIndex, colIndex] = coords;
+    if (!this.isCorrectCoords(coords)) {
+        throw new Error('Incorrect coords!');
+    }
+
+    const [rowIndex, colIndex] = coords; 
 
     this.fieldsList[rowIndex][colIndex] = value;
+}
+
+Board.prototype.isCorrectCoords = function (coords) {
+    return /^[0-9]{2}$/i.test(coords);
 }

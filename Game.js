@@ -16,10 +16,6 @@ export default class Game {
             throw new Error('Invalid argument!');
         }
 
-        const name = '#board';
-        this[name] = value;
-        // utworzone zostanie nowe pole
-        // o nazwie [#board], które będzie publiczne
-        // to co innego niż pole prywatne [board]
+        this.#board = value;
     }
 }

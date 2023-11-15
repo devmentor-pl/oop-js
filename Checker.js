@@ -16,7 +16,7 @@ function Piece(player) {
         }
     });
 
-    this._player = player;
+    this.player = player;
 }
 
 // export default class Checker extends Piece { }

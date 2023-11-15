@@ -1,4 +1,4 @@
-import Board from './Board.js';
+import Board from "./Board.js";
 
 export default class Game {
     #board;
@@ -16,6 +16,10 @@ export default class Game {
             throw new Error('Invalid argument!');
         }
 
-        this.#board = value;
+        const name = '#board';
+        this[name] = value;
+        // utworzone zostanie nowe pole
+        // o nazwie [#board], które będzie publiczne
+        // to co innego niż pole prywatne [board]
     }
 }

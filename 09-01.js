@@ -1,16 +1,14 @@
-import Board from './Board.js';
-import Player from './Player.js';
-import Game from './Game.js';
+import Board from './classes/Board.js';
+import Player from './classes/Player.js';
+import Game from './classes/Game.js';
 
-import Checker from './Checker.js';
+import Checker from './classes/Checker.js';
 
 const board = new Board();
 const player1 = new Player('Mateusz');
 const player2 = new Player('Anna');
 
 const checker1 = new Checker(player1);
-checker1._player = player2; // niestety to działa
-
 console.log(checker1, checker1.name);
 
 const game = new Game(board, player1, player2);

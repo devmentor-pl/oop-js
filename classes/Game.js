@@ -1,9 +1,11 @@
 import Board from "./Board.js";
 
 export default class Game {
-    #board;
     #player1;
     #player2;
+
+    #board; // dla warcabów
+    #cards; // dla pokera
 
     constructor(board, player1, player2) {
         this.board = board;
@@ -18,4 +20,13 @@ export default class Game {
 
         this.#board = value;
     }
+}
+
+
+export class CheckerGame extends Game {
+
+}
+
+export class PokerGame extends Game {
+
 }

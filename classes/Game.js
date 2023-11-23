@@ -7,10 +7,12 @@ export default class Game {
     #board; // dla warcabów
     #cards; // dla pokera
 
-    constructor(board, player1, player2) {
+    constructor(board, player1, player2, cards) {
         this.board = board;
         this.#player1 = player1;
         this.#player2 = player2;
+
+        this.#cards = cards;
     }
 
     set board(value) {
@@ -23,7 +25,7 @@ export default class Game {
 }
 
 
-export class CheckerGame extends Game {
+export class CheckersGame extends Game {
 
 }
 

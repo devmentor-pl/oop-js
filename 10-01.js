@@ -1,6 +1,6 @@
-import Board from './Board.js';
-import Player from './Player.js';
-import Game, { CheckersGame, PokerGame } from './Game.js';
+import Board from './classes/Board.js';
+import Player from './classes/Player.js';
+import Game, { CheckersGame, PokerGame } from './classes/Game.js';
 
 const board = new Board();
 const player1 = new Player('Mateusz');

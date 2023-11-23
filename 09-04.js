@@ -12,7 +12,6 @@ const player1 = new Player('Mateusz');
 board.setField('61', Field.factory(new Checker(player1)));
 board.setField('52', Field.factory());
 
-
 board.move('61-52', player1);
 console.log(board.getField('61'));
 console.log(board.getField('52'));

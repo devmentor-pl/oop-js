@@ -6,10 +6,9 @@ import Checker from './classes/Checker.js';
 
 const board = new Board();
 const player1 = new Player('Mateusz');
-const player2 = new Player('Anna');
+// const player2 = new Player('Anna');
+// const game = new Game(board, player1, player2);
 
 board.setField('12', new Field(new Checker(player1)));
-
-const game = new Game(board, player1, player2);
 
 console.log(board.getField('12'));

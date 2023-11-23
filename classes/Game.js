@@ -4,15 +4,19 @@ export default class Game {
     #player1;
     #player2;
 
-    #board; // dla warcabów
-    #cards; // dla pokera
-
-    constructor(board, player1, player2, cards) {
-        this.board = board;
+    constructor(player1, player2) {
         this.#player1 = player1;
         this.#player2 = player2;
+    }
+}
 
-        this.#cards = cards;
+export class CheckersGame extends Game {
+    #board;
+
+    constructor(board, player1, player2) {
+        super(player1, player2);
+
+        this.board = board;
     }
 
     set board(value) {
@@ -24,11 +28,12 @@ export default class Game {
     }
 }
 
-
-export class CheckersGame extends Game {
-
-}
-
 export class PokerGame extends Game {
+    #cards;
 
+    constructor(cards, player1, player2) {
+        super(player1, player2);
+
+        this.#cards = cards;
+    }
 }

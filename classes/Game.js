@@ -8,6 +8,14 @@ export default class Game {
         this.#player1 = player1;
         this.#player2 = player2;
     }
+
+    start() {
+        console.log('Uruchamiam grę!');
+    }
+
+    // get player1() {
+    //     return this.#player1;
+    // }
 }
 
 export class CheckersGame extends Game {
@@ -26,6 +34,14 @@ export class CheckersGame extends Game {
 
         this.#board = value;
     }
+
+    start() {
+        super.start();
+        console.log('Warcaby');
+
+        // console.log(this.#player1, this.#player2); 
+        // console.log(this.player1);
+    }
 }
 
 export class PokerGame extends Game {
@@ -35,5 +51,11 @@ export class PokerGame extends Game {
         super(player1, player2);
 
         this.#cards = cards;
+    }
+
+    start() {
+        super.start();
+        console.log('Poker');
+        // console.log(this.player1);
     }
 }

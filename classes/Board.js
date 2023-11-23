@@ -39,6 +39,41 @@ export default class Board {
         return /^[0-9]{2}$/i.test(coords);
     }
 
+    move(notation, player) {
+        const [from, to] = notation.split('-'); // 61-52 => from=61, to=52
+        if (!this.isCorrectCoords(from)) {
+            throw new Error('Incorrect coords (from)');
+        }
+
+        if (!this.isCorrectCoords(to)) {
+            throw new Error('Incorrect coords (to)');
+        }
+
+        const fieldFrom = this.getField(from);
+        const fieldTo = this.getField(to);
+
+        if (fieldFrom.isEmpty()) {
+            throw new Error('This field is empty!');
+        }
+
+        if (!fieldFrom.isPieceOwner(player)) {
+            throw new Error('You can\'t move this piece!');
+        }
+
+        const piece = fieldFrom.piece;
+        if (!piece.isCorrectMove(
+            from,
+            to,
+            player
+        )
+        ) {
+            throw new Error('This move is not correct!');
+        }
+
+        fieldTo.piece = fieldFrom.piece; // zamierzona referencja
+        fieldFrom.setEmpty(); // "niszczymy" referencje
+    }
+
     #getRowIndex(coords) {
         const [rowIndex] = coords;
 
@@ -50,17 +85,4 @@ export default class Board {
 
         return colIndex;
     }
-
-    // 05 - domknięcia (ang. closure)
-    // function getRowIndex(coords) {
-    //     const [rowIndex] = coords;
-
-    //     return rowIndex;
-    // }
-
-    // function getColIndex(coords) {
-    //     const [, colIndex] = coords;
-
-    //     return colIndex;
-    // }
 }

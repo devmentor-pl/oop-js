@@ -16,4 +16,8 @@ export default class Piece {
     get player() {
         return this._player;
     }
+
+    isCorrectMove() {
+        return true;
+    }
 }

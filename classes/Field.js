@@ -3,9 +3,9 @@ import Piece from './Piece.js';
 export default class Field {
     #piece;
 
-    // static factory(...params) {
-    //     return new Field(...params);
-    // }
+    static factory(...params) {
+        return new Field(...params);
+    }
 
     constructor(piece = null) {
         this.piece = piece;

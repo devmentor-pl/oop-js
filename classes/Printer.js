@@ -5,7 +5,7 @@ export default class Printer {
         data.forEach(row => {
             let line = '';
             row.forEach(field => {
-                line += ` ${!(field instanceof Field) || field.isEmpty() ? '_' : field.piece.type[0]} `;
+                line += ` ${!(field instanceof Field) || field.isEmpty() ? '_' : field.piece.name[0]} `;
             });
 
             console.log(line);

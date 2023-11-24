@@ -1,8 +1,8 @@
 export default class Move {
     #forwardRight;    // ↗
     #forwardLeft;     // ↖
-    #backwardRight;  // ↘
-    #backwardLeft;   // ↙
+    #backwardRight;   // ↘
+    #backwardLeft;    // ↙
 
     static factory(settings) { // YAGNI
         return new Move(settings)

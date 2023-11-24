@@ -41,7 +41,7 @@ export default class Board {
         return /^[0-9]{2}$/i.test(coords);
     }
 
-    move(notation, player) {
+    move(notation, player, inverse) {
         const [from, to] = notation.split('-'); // 61-52 => from=61, to=52
         if (!this.isCorrectCoords(from)) {
             throw new Error('Incorrect coords (from)');
@@ -62,13 +62,19 @@ export default class Board {
             throw new Error('You can\'t move this piece!');
         }
 
+        // const piece = fieldFrom.piece;
+        // if (!piece.isCorrectMove(
+        //     from,
+        //     to,
+        //     player
+        // )
+        // ) {
+        //     throw new Error('This move is not correct!');
+        // }
+
         const piece = fieldFrom.piece;
-        if (!piece.isCorrectMove(
-            from,
-            to,
-            player
-        )
-        ) {
+        const move = piece.getMove(from, to, inverse);
+        if (!move) {
             throw new Error('This move is not correct!');
         }
 

@@ -1,4 +1,4 @@
-import Field from './Field.js';
+import Printer from './Printer.js';
 
 export default class Board {
     #fieldsList = [
@@ -77,14 +77,8 @@ export default class Board {
     }
 
     print() {
-        this.#fieldsList.forEach(row => {
-            let line = '';
-            row.forEach(field => {
-                line += ` ${!(field instanceof Field) || field.isEmpty() ? '_' : field.piece.name[0]} `;
-            });
-
-            console.log(line);
-        });
+        const printer = new Printer();
+        printer.run(this.#fieldsList);
     }
 
     #getRowIndex(coords) {

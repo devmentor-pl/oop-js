@@ -4,9 +4,8 @@ import Board from './Board.js';
 export default class CheckersGame extends Game {
     #board;
 
-    constructor(board, player1, player2) {
-        super(player1, player2);
-
+    constructor(board) {
+        super(); // musimy wywołać nawet gdy nic się tam nie dzieje
         this.board = board;
     }
 

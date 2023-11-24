@@ -1,10 +1,17 @@
 export default class Game {
-    #player1;
-    #player2;
+    #playersList = []
 
-    constructor(player1, player2) {
-        this.#player1 = player1;
-        this.#player2 = player2;
+    constructor() {
+        // konstruktor nic nie robi
+        // więc nie musielibyśmy go pisać
+    }
+
+    addPlayer(player) {
+        this.#playersList.push(player);
+    }
+
+    get playersList() { // aby mieć dostęp do danych w dziecku
+        return this.#playersList;
     }
 
     start() {

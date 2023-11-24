@@ -18,5 +18,3 @@ const game = new CheckersGame(board);
 game.addPlayer(player1);
 game.addPlayer(player2);
 game.start();
-
-console.log(game.playersList);

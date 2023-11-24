@@ -1,3 +1,5 @@
+import Field from './Field.js';
+
 export default class Board {
     #fieldsList = [
         ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09'],
@@ -72,6 +74,17 @@ export default class Board {
 
         fieldTo.piece = fieldFrom.piece; // zamierzona referencja
         fieldFrom.setEmpty(); // "niszczymy" referencje
+    }
+
+    print() {
+        this.#fieldsList.forEach(row => {
+            let line = '';
+            row.forEach(field => {
+                line += ` ${!(field instanceof Field) || field.isEmpty() ? '_' : field.piece.name[0]} `;
+            });
+
+            console.log(line);
+        });
     }
 
     #getRowIndex(coords) {

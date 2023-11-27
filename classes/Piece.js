@@ -1,6 +1,6 @@
 import Move from './Move.js';
 
-export default class Piece {
+export default class Piece { // klasa abstrakcyjna
     _player;
 
     constructor(player) {
@@ -29,13 +29,8 @@ export default class Piece {
 
     getMove(from, to, inverse) {
         const move = Move.calculateMove(from, to, inverse);
-        console.log(from, to, inverse);
-        console.log('wykonanych ruch:', move);
         return this.availableMoves.find(avMove => {
-            console.log('porównuję z:', avMove);
-            const isMatch = Move.isMatch(avMove, move);
-            console.log('wynik:', isMatch);
-            return isMatch;
+            return Move.isMatch(avMove, move);;
         });
     }
 }

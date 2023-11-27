@@ -62,17 +62,13 @@ export default class Board {
             throw new Error('You can\'t move this piece!');
         }
 
-        // const piece = fieldFrom.piece;
-        // if (!piece.isCorrectMove(
-        //     from,
-        //     to,
-        //     player
-        // )
-        // ) {
-        //     throw new Error('This move is not correct!');
-        // }
-
         const piece = fieldFrom.piece;
+        // let move;
+        // if(piece.name === 'Checker') {
+        //     move = piece.getCheckerMove();
+        // } else if(piece.name == 'King') {
+        //     move = piece.getCheckerMove();
+        // }
         const move = piece.getMove(from, to, inverse);
         if (!move) {
             throw new Error('This move is not correct!');

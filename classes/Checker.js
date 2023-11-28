@@ -8,12 +8,5 @@ export default class Checker extends Piece {
             Move.factory({ forwardRight: 1 }),
         ];
     }
-
-    // getCheckerMove(from, to, inverse) {
-    //     const move = Move.calculateMove(from, to, inverse);
-    //     return this.availableMoves.find(avMove => {
-    //         return Move.isMatch(avMove, move);;
-    //     });
-    // }
 }
 

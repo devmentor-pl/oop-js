@@ -1,6 +1,7 @@
-import Printer from './Printer.js';
+import PrinterInterface from './PrinterInterface.js';
 
 export default class Board {
+    #printer;
     #fieldsList = [
         ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09'],
         ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19'],
@@ -30,7 +31,6 @@ export default class Board {
             throw new Error('Incorrect coords!');
         }
 
-        // const [rowIndex, colIndex] = coords; 
         const rowIndex = this.#getRowIndex(coords);
         const colIndex = this.#getColIndex(coords);
 
@@ -63,24 +63,27 @@ export default class Board {
         }
 
         const piece = fieldFrom.piece;
-        // let move;
-        // if(piece.name === 'Checker') {
-        //     move = piece.getCheckerMove();
-        // } else if(piece.name == 'King') {
-        //     move = piece.getCheckerMove();
-        // }
         const move = piece.getMove(from, to, inverse);
         if (!move) {
             throw new Error('This move is not correct!');
         }
 
-        fieldTo.piece = fieldFrom.piece; // zamierzona referencja
-        fieldFrom.setEmpty(); // "niszczymy" referencje
+        fieldTo.piece = fieldFrom.piece;
+        fieldFrom.setEmpty();
+    }
+
+    setPrinter(printer) {
+        if (!(printer instanceof PrinterInterface)) {
+            throw new Error('Invalid argument!');
+        }
+
+        this.#printer = printer;
     }
 
     print() {
-        const printer = new Printer();
-        printer.run(this.#fieldsList);
+        // const printer = new Printer();
+        // printer.run(this.#fieldsList);
+        this.#printer.run(this.#fieldsList);
     }
 
     #getRowIndex(coords) {

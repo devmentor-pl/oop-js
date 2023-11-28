@@ -1,6 +1,7 @@
+import PrinterInterface from './PrinterInterface.js';
 import Field from './Field.js';
 
-export default class Printer {
+export default class ConsolePrinter extends PrinterInterface {
     run(data) {
         data.forEach(row => {
             let line = '';

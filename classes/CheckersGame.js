@@ -5,7 +5,7 @@ export default class CheckersGame extends Game {
     #board;
 
     constructor(board) {
-        super(); // musimy wywołać nawet gdy nic się tam nie dzieje
+        super();
         this.board = board;
     }
 

@@ -19,10 +19,6 @@ export default class Piece { // klasa abstrakcyjna
         return this._player;
     }
 
-    isCorrectMove() {
-        return true;
-    }
-
     get availableMoves() {
         throw new Error('Implement this method!');
     }
